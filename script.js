@@ -327,3 +327,5 @@ console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3));
 console.log((2.345).toFixed(2));
 console.log(+(2.345).toFixed(2)); */
+
+console.log((2.2).toFixed(0));
