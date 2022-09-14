@@ -358,7 +358,7 @@ labelBalance.addEventListener('click', function () {
 /// Numeric Separators
 
 // 287,645,000,000
-const diameter = 287_645_000_000;
+/* const diameter = 287_645_000_000;
 console.log(diameter);
 
 const price = 345_99;
@@ -372,3 +372,25 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(Number('230000'));
+
+ */
+
+///// Bignt
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 3);
+
+console.log(4646545465468563651465416148548646144169416984n); /// BigInt
+console.log(BigInt(4646545465468563));
+
+// Operations
+
+console.log(10000n + 10000n);
+console.log(51481465465846854698574968544964n * 1000000n);
+
+const huge = 2202468747874654787n;
+const num = 23;
+console.log(huge * BigInt(num));
