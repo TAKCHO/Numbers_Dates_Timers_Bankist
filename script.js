@@ -375,9 +375,9 @@ console.log(Number('230000'));
 
  */
 
-///// Bignt
+////////////////////// Bignt
 
-console.log(2 ** 53 - 1);
+/* console.log(2 ** 53 - 1);
 console.log(Number.MAX_SAFE_INTEGER);
 console.log(2 ** 53 + 1);
 console.log(2 ** 53 + 1);
@@ -406,3 +406,20 @@ console.log(huge + '  is Really Big!');
 // Divisions
 console.log(11n / 3n);
 console.log(10 / 3);
+ */
+
+///// Creating Dates
+
+// Create a date
+const now = new Date();
+console.log(now);
+
+console.log(new Date('2022-09-14T18:44:22.926Z'));
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
