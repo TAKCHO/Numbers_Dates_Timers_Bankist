@@ -184,8 +184,17 @@ currentAccount = account1;
 updateUI(currentAccount);
 containerApp.style.opacity = 100;
 
-// Create currnet date and time
+//Experimenting API
 const now = new Date();
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+};
+
+labelDate.textContent = new Intl.DateTimeFormat('en-US', options).format(now);
+
+// Create currnet date and time
+// const now = new Date();
 const day = `${now.getDate()}`.padStart(2, 0);
 const month = `${now.getMonth() + 1}`.padStart(2, 0);
 const year = now.getFullYear();
@@ -496,7 +505,7 @@ future.setFullYear(2040);
 console.log(future);
  */
 
-const future = new Date(2037, 10, 19, 15, 23);
+/* const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
 const calcDaysPassed = (date1, date2) =>
@@ -504,3 +513,6 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+ */
+
+////// Internationalizing Dates /////
