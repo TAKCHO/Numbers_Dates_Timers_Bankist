@@ -528,3 +528,20 @@ console.log(days1);
  */
 
 ////// Internationalizing Dates /////
+
+const num = 3414154684.23;
+
+const optionsNew = {
+  style: 'unit',
+  unit: 'mile-per-hour',
+  currency: 'EUR',
+  // useGrouping: false,
+};
+
+console.log('US:', new Intl.NumberFormat('en-US', optionsNew).format(num));
+console.log('Germany:', new Intl.NumberFormat('en-DE', optionsNew).format(num));
+console.log('Syria:', new Intl.NumberFormat('en-SY', optionsNew).format(num));
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language).format(num)
+);
