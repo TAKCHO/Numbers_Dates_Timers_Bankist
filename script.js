@@ -42,8 +42,8 @@ const account2 = {
     '2020-01-25T14:18:46.235Z',
     '2020-02-05T16:33:06.386Z',
     '2020-04-10T14:43:26.374Z',
-    '2020-06-25T18:49:59.371Z',
-    '2020-07-26T12:01:20.894Z',
+    '2020-07-28T18:49:59.371Z',
+    '2020-09-17T12:01:20.894Z',
   ],
   currency: 'USD',
   locale: 'en-US',
@@ -83,13 +83,21 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 const formatMovementDate = function (date) {
   const calcDaysPassed = (date1, date2) =>
-    Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+    Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
-  const day = `${date.getDate()}`.padStart(2, 0);
-  const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  const year = date.getFullYear();
+  const daysPassed = calcDaysPassed(new Date(), date);
+  console.log(daysPassed);
 
-  return `${day}/${month}/${year}`;
+  if (daysPassed === 0) return 'Today';
+  if (daysPassed === 1) return 'yesterday';
+  if (daysPassed === 7) return `${daysPassed} days ago`;
+  else {
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
 };
 
 const displayMovements = function (acc, sort = false) {
